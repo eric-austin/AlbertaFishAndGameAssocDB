@@ -15,7 +15,7 @@
 			<a href="events.php"><strong>Events</strong></a> - search for club events
 		</li>
 		<li>
-			<a href="firing-range.php"><strong>Firing Range</strong></a> - search for firing ranges
+			<a href="firing-range.php"><strong>Firing Range</strong></a> - view firing ranges
 		</li>
 		<li>
 			<a href="newsletters.php"><strong>Newsletters</strong></a> - view newsletter subscriptions
