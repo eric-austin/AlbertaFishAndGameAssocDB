@@ -31,7 +31,7 @@ try {
     		<tr>
       			<th>City</th>
       			<th>Address</th>
-      			<th>Number of Members</th>
+      			<th># of Members</th>
     		</tr>
   		</thead>
   		<tbody>
@@ -40,7 +40,7 @@ try {
   					<td><?php echo escape($row["City"]); ?></td>
         			<td><?php echo escape($row["Address"]); ?></td>
         			<td><?php echo escape($row["NumMemb"]); ?></td>
-        			<td><a href="update-single.php?city=<?php echo escape($row["City"]); ?>">Edit</a></td>
+        			<td><a href="update-single.php?City=<?php echo escape($row["City"]); ?>">Edit</a></td>
         		</tr>
         	<?php endforeach; ?>
   		</tbody>

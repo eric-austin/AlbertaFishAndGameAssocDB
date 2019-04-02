@@ -9,13 +9,13 @@
 			<a href="clubs/clubs.php"><strong>Clubs</strong></a> - create, edit, and view clubs
 		</li>
 		<li>
-			<a href="reports.php"><strong>Reports</strong></a> - create, edit, and view reports
+			<a href="reports/reports.php"><strong>Reports</strong></a> - create, edit, and view reports
 		</li>
 		<li>
-			<a href="members.php"><strong>Members</strong></a> - create, edit, and view members
+			<a href="members/members.php"><strong>Members</strong></a> - create, edit, and view members
 		</li>
 		<li>
-			<a href="events.php"><strong>Events</strong></a> - create, edit, and view events
+			<a href="events/events.php"><strong>Events</strong></a> - create, edit, and view events
 		</li>
 	</ul>
 	
