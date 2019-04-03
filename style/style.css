@@ -1,9 +1,7 @@
 /*MAIN BODY AND BACKGROUND SETTINGS*/
 body {
     font-family: Helvetica, Arial, sans-serif;
-    align-items: center;
-    /*image not working*/
-    background-image: url(/images/test.jpeg) repeat 0 0;
+    background-color: white;
     width: 100%;
     margin: auto;
 
@@ -14,17 +12,27 @@ body {
 }
 
 #AFGA-logo{
-  margin-left: 60;
+  margin-left: 30;
   margin-right: 10;
   float: left;
 
 }
 
+#header-title{
+  padding-top: 100;
+  color: white;
+}
+
 .upper-header{
   height: 168;
-  text-decoration:
+  background-image: url(/images/test.jpg);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center;
+
 
 }
+
 
 /*NAVIGATION*/
 #navmenu {

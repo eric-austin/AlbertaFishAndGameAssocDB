@@ -10,10 +10,10 @@
 		<div id="header-with-nav">
 			<div class="upper-header">
 			<div id="AFGA-logo">
-				<img src="/images/logo.png" alt="logo"/>
+				<img src="/images/afga-logo.png" alt="logo"/>
 			</div>
 			<div id="header-title">
-				<h1>Alberta Fish and Game Association</h1>
+				<h1>Alberta Fish and Game Association Database</h1>
 			</div>
 			</div>
 			<div class="navigation">
