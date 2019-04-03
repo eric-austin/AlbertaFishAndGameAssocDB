@@ -2,7 +2,6 @@
 
 <body>
 	<h1>Members</h1>
-	
 	<ul>
 		<li>
 			<a href="search-member.php"><strong>Member Search</strong></a> - search for a member
@@ -16,7 +15,7 @@
 		<li>
 			<a href="delete-member.php"><strong>Delete Member</strong></a> - remove a member from the database
 		</li>
-	</ul>	
+	</ul>
 </body>
 
 <a href="../admin-page.php">Back to home</a>
