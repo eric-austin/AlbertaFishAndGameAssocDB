@@ -4,10 +4,10 @@
 <body>
 	<h1>Member Login</h1>
 
-	<form action="member-page.php" method="post">
-		Email: <input type="text" name="useremail" /><br /> Password: <input
-			type="text" name="password" /><br /> <input type="submit"
-			name="submit" />
+	<form class="login" action="member-page.php" method="post">
+		Email: <br /><input type="text" name="useremail" /><br />
+		Password: <br /><input type="text" name="password" /><br />
+		<input type="submit" name="submit" />
 	</form>
 </body>
 
