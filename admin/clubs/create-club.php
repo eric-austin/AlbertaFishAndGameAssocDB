@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * use an html form to create a new user
+ * use an html form to create a new club
  * in the database
  */
 
