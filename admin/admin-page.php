@@ -17,6 +17,9 @@
 		<li>
 			<a href="events/events.php"><strong>Events</strong></a> - create, edit, and view events
 		</li>
+		<li>
+			<a href="animals/animals.php"><strong>Animals</strong></a> - create, edit, and view animals
+		</li>
 	</ul>
 	
 </body>
