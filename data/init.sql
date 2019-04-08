@@ -159,11 +159,11 @@ CREATE TABLE Prize (
 			ON DELETE CASCADE	ON UPDATE CASCADE
 );
 
-CREATE TABLE login (
+CREATE TABLE Login (
   MemberID	int(8) NOT NULL,
   username	varchar(30) PRIMARY KEY,
   password 	varchar(30) NOT NULL,
-  role 		enum('member','admin') DEFAULT NULL,
+  role 		enum('member','admin') NOT NULL DEFAULT 'member',
   FOREIGN KEY (MemberID) REFERENCES Member(MemNo)
 			ON DELETE CASCADE	ON UPDATE CASCADE
 );

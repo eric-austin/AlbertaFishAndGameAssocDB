@@ -27,6 +27,19 @@ if (isset($_POST['submit'])) {
         $statement->execute();
         
         $result = $statement->fetch(PDO::FETCH_ASSOC);
+        
+        if($result["MemberID"] > 0) {
+            if($result["role"] == "admin") {
+                header("Location: ./admin/admin-page.php");
+                exit;
+            } else {
+                $MemNo = escape($result["MemberID"]);
+                header("Location: ./member/member-page.php?MemNo=" . $MemNo);
+                exit;
+            }
+        } else {
+            $failure = "Invalid username or password.";
+        }
     } catch (PDOException $error) {
         echo $sql . "<br/>" . $error->getMessage();
     }
@@ -43,9 +56,7 @@ if (isset($_POST['submit'])) {
 <body>
 	<h1>Login</h1>
 	
-	<?php if (isset($_POST['submit']) && $statement) { ?>
-  		<?php echo escape($result["MemberID"]); ?> successfully logged in.
-	<?php } ?>
+	<?php if ($failure) echo $failure?>
 	
 	<form method="post">
 		Username: <br /><input type="text" name="username" id="username"/><br />
