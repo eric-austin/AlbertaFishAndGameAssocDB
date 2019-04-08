@@ -6,7 +6,7 @@
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
    session_start();
    
-   if(isset($_POST['login_btn'])) {
+   if(isset($_POST["submit"])) {
       // username and password sent from form 
       
       $myusername = ($_POST['username']);
@@ -33,22 +33,12 @@
 <?php include "../templates/header.php"; ?>	
 
 <body>
-	<div class="header">
-		<h2>Login</h2>
-	</div>
-	<form method="post" action="login.php">
+	<h1>Login</h1>
 
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" >
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password">
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_btn">Login</button>
-		</div>
+	<form class="login" action="login.php" method="post">
+		Email: <br /><input type="text" name="username" /><br />
+		Password: <br /><input type="text" name="password" /><br />
+		<input type="submit" name="submit" /> 
 	</form>
 </body>
 
