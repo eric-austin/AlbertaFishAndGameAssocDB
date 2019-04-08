@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * List all members with a link to delete
@@ -10,15 +10,15 @@ require "../../common.php";
 if (isset($_GET["MemNo"])) {
     try {
         $connection = new PDO($dsn, $username, $password, $options);
-        
+
         $MemNo = $_GET["MemNo"];
-        
+
         $sql = "DELETE FROM Member WHERE MemNo = :MemNo";
-        
+
         $statement = $connection->prepare($sql);
         $statement->bindValue(":MemNo", $MemNo);
         $statement->execute();
-        
+
         $success = "Member successfully deleted.";
     } catch (PDOException $error) {
         echo $sql . "<br/>" . $error->getMessage();
@@ -27,12 +27,12 @@ if (isset($_GET["MemNo"])) {
 
 try {
     $connection = new PDO($dsn, $username, $password, $options);
-    
+
     $sql = "SELECT * FROM Member";
-    
+
     $statement = $connection->prepare($sql);
     $statement->execute();
-    
+
     $result = $statement->fetchAll();
 } catch (PDOException $error) {
     echo $sql . "<br/>" . $error->getMessage();
@@ -44,9 +44,9 @@ try {
 
 <body>
 	<h1>Delete Member</h1>
-	
+
 	<?php if ($success) echo $success; ?>
-	
+
 	<table>
   		<thead>
     		<tr>

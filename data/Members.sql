@@ -422,24 +422,6 @@ VALUES
 'deerfoot',
 'Calgary');
 
-#Attends
-INSERT INTO `afga`.`attends`
-(`EventName`,
-`EventDate`,
-`MemNo`)
-VALUES
-('Hardy Hunting',
-'2019-04-30',
-'0');
-
-INSERT INTO `afga`.`attends`
-(`EventName`,
-`EventDate`,
-`MemNo`)
-VALUES
-('Freds fishing',
-'2019-04-30',
-'0');
 
 INSERT INTO `afga`.`attends`
 (`EventName`,
@@ -479,15 +461,6 @@ VALUES
 '1');
 
 #practiceat
-INSERT INTO `afga`.`practiceat`
-(`Latitude`,
-`Longitude`,
-`MemNo`)
-VALUES
-('200',
-'200',
-'0');
-
 INSERT INTO `afga`.`practiceat`
 (`Latitude`,
 `Longitude`,
@@ -650,3 +623,14 @@ VALUES
 'Taylor Trapping',
 '2019-04-30',
 '5002');
+
+INSERT INTO `afga`.`login`
+(`MemberID`,
+`username`,
+`password`,
+`role`)
+VALUES
+('4',
+'user1',
+'pw',
+'Admin');
