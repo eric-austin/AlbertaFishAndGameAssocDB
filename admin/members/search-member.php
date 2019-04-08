@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
         $connection = new PDO($dsn, $username, $password, $options);
         
         $sql = "SELECT *
-                FROM Member
+                FROM Member NATURAL JOIN MemberCard
                 WHERE LName = :LName";
         
         $LName = $_POST["LName"];
@@ -67,6 +67,8 @@ if (isset($_POST['submit'])) {
       			<th>Phone #</th>
       			<th>Email</th>
       			<th>Member Type</th>
+      			<th>Club</th>
+      			<th>Exp. Date</th>
     		</tr>
   		</thead>
   		<tbody>
@@ -79,6 +81,8 @@ if (isset($_POST['submit'])) {
         			<td><?php echo escape($row["Phone"]); ?></td>
         			<td><?php echo escape($row["Email"]); ?></td>
         			<td><?php echo escape($row["Type"]); ?></td>
+        			<td><?php echo escape($row["Club"]); ?></td>
+        			<td><?php echo escape($row["ExpDate"]); ?></td>
         			<td><a href="update-single.php?MemNo=<?php echo escape($row["MemNo"]); ?>">Edit</a></td>
         			<td><a href="search-member.php?MemNo=<?php echo escape($row["MemNo"]); ?>">Delete</a></td>
         		</tr>
