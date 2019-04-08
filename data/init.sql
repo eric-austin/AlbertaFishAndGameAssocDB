@@ -158,3 +158,12 @@ CREATE TABLE Prize (
 	FOREIGN KEY (EventName, EventDate) REFERENCES Event(Name, Date)
 			ON DELETE CASCADE	ON UPDATE CASCADE
 );
+
+CREATE TABLE login (
+  MemberID	int(8) NOT NULL,
+  username	varchar(30) PRIMARY KEY,
+  password 	varchar(30) NOT NULL,
+  role 		enum('member','admin') DEFAULT NULL,
+  FOREIGN KEY (Member) REFERENCES Member(MemNo)
+			ON DELETE CASCADE	ON UPDATE CASCADE
+);
