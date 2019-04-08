@@ -43,15 +43,25 @@ if (isset($_POST['submit'])) {
 	
 	<form method="post">
 		<label for="Name">Name</label>
+		<br />
 		<input type="text" name="Name" id="Name">
+		<br />
 		<label for="Date">Date</label>
+		<br />
 		<input type="date" name="Date" id="Date">
+		<br />
 		<label for="City">City</label>
+		<br />
 		<input type="text" name="City" id="City">
+		<br />
 		<label for="Street">Address</label>
+		<br />
 		<input type="text" name="Street" id="City">
+		<br />
 		<label for="Club">Club</label>
+		<br />
 		<input type="text" name="Club" id="Club">
+		<br />
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>
