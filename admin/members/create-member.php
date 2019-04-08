@@ -41,21 +41,34 @@ if (isset($_POST['submit'])) {
 
 <body>
 	<h1>Create Member</h1>
-	
+
 	<form method="post">
 		<label for="FName">First Name</label>
+		<br />
 		<input type="text" name="FName" id="FName">
+		<br />
 		<label for="LName">Last Name</label>
+		<br />
 		<input type="text" name="LName" id="LName">
+		<br />
 		<label for="Gender">Gender</label>
+		<br />		
 		<input type="text" name="Gender" id="Gender">
+		<br />
 		<label for="Phone">Phone Num</label>
+		<br />
 		<input type="text" name="Phone" id="Phone">
+		<br />
 		<label for="Email">Email</label>
+		<br />
 		<input type="text" name="Email" id="Email">
+		<br />
 		<label for="Type">Member Type</label>
+		<br />
 		<input type="text" name="Type" id="Type">
+		<br />
 		<input type="submit" name="submit" value="Submit">
+		<br />
 	</form>
 </body>
 
