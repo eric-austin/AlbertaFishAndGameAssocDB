@@ -39,9 +39,13 @@ if (isset($_POST['submit'])) {
 	
 	<form method="post">
 		<label for="city">City</label>
+		<br />
 		<input type="text" name="city" id="city">
+		<br />
 		<label for="address">Address</label>
+		<br />
 		<input type="text" name="address" id="address">
+		<br />
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>
