@@ -273,13 +273,7 @@ VALUES
 '',
 '4');
 
-#Membercard
-INSERT INTO `afga`.`membercard`
-(`MemNo`,
-`Club`)
-VALUES
-('0',
-'calgary');
+
 
 INSERT INTO `afga`.`membercard`
 (`MemNo`,
