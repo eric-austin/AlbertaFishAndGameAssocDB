@@ -43,15 +43,25 @@ if (isset($_POST['submit'])) {
 	
 	<form method="post">
 		<label for="PrizeName">Prize Name</label>
+		<br />
 		<input type="text" name="PrizeName" id="PrizeName">
+		<br />
 		<label for="Member">Member #</label>
+		<br />
 		<input type="number" name="Member" id="Member">
+		<br />
 		<label for="EventName">Event Name</label>
+		<br />
 		<input type="text" name="EventName" id="EventName">
+		<br />
 		<label for="EventDate">Event Date</label>
+		<br />
 		<input type="date" name="EventDate" id="EventDate">
+		<br />
 		<label for="Animal">Animal Tag #</label>
+		<br />
 		<input type="number" name="Animal" id="Animal">
+		<br />
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>
