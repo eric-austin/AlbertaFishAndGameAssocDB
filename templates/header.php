@@ -18,10 +18,11 @@
 			</div>
 			<div class="navigation">
 				<ul id="navmenu">
-				  <li class="navbutton"><a href="/admin/admin-page.php">Admin Home</a></li>
-				  <li class="navbutton"><a href="/member/member-page.php">Member Home</a></li>
-					<li class="navbutton"><a href="/admin/admin-login.php">Admin Login</a></li>
-				  <li class="navbutton"><a href="/member/member-login.php">Member Login</a></li>
+				  <li class="navbutton"><a href="../admin/admin-page.php">Admin Home</a></li>
+				  <li class="navbutton"><a href="../member/member-page.php">Member Home</a></li>
+					<li class="navbutton"><a href="../admin/admin-login.php">Admin Login</a></li>
+				  <li class="navbutton"><a href="../member/member-login.php">Member Login</a></li>
+					<li class="navbutton"><a href="../login/login.php">Login</a></li>
 				</ul>
 			</div>
 		</div>
