@@ -1,9 +1,9 @@
 
-<?php include "../templates/header.php"; ?>	
+<?php include "../templates/header.php"; ?>
 
 <body>
-	<h1>Admin Page</h1>
-	
+	<h1>Admin Home</h1>
+
 	<ul>
 		<li>
 			<a href="clubs/clubs.php"><strong>Clubs</strong></a> - create, edit, and view clubs
@@ -24,7 +24,7 @@
 			<a href="animals/animals.php"><strong>Animals</strong></a> - create, edit, and view animals
 		</li>
 	</ul>
-	
+
 </body>
 
 <?php include "../templates/footer.php"; ?>

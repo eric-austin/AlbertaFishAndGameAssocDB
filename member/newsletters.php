@@ -42,5 +42,6 @@ try {
       </tbody>
     </table>
 </body>
+<?php echo '<a href="member-page.php?MemNo=' . $MemNo . '"><strong>Back to home</strong></a>'?>
 
 <?php include "../templates/footer.php"; ?>

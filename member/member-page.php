@@ -3,7 +3,7 @@
 
 <?php $MemNo = $_GET["MemNo"];?>
 <body>
-	<h1>Member Page</h1>
+	<h1>Member Home</h1>
 
 	<ul>
 		<li>
