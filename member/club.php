@@ -1,33 +1,30 @@
 <?php
 
-/**
- * List all details about member's club
- */
-
 require "../config.php";
 require "../common.php";
 
+$MemNo = $_GET["MemNo"];
+
 try {
     $connection = new PDO($dsn, $username, $password, $options);
-//not done    
-    $sql = "SELECT * FROM Club";
+    $sql = "SELECT Club.* FROM MemberCard, Club WHERE MemberCard.MemNo=:MemNo AND Club.city=MemberCard.club";
 
     $statement = $connection->prepare($sql);
+    $statement->bindValue(":MemNo", $MemNo);
     $statement->execute();
 
     $result = $statement->fetchAll();
 } catch (PDOException $error) {
     echo $sql . "<br/>" . $error->getMessage();
 }
-
 ?>
 
-<?php require "../templates/header.php"; ?>
+<?php require "../templates/header.php";?>
 
 <body>
-	<h1>Club Details</h1>
+	<h1>My Club Details</h1>
 
-	<table>
+  <table>
   		<thead>
     		<tr>
       			<th>City</th>
@@ -45,6 +42,5 @@ try {
   		</tbody>
   	</table>
 </body>
-
 
 <?php include "../templates/footer.php"; ?>

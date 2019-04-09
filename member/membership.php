@@ -3,11 +3,11 @@
 require "../config.php";
 require "../common.php";
 
+$MemNo = $_GET["MemNo"];
+
 try {
     $connection = new PDO($dsn, $username, $password, $options);
-    $MemNo = $_GET["MemNo"];
-    $sql = "SELECT member.* FROM member, login WHERE :MemNo=Member.MemNo";
-
+    $sql = "SELECT Member.* FROM Member WHERE Member.MemNo=:MemNo";
 
     $statement = $connection->prepare($sql);
     $statement->bindValue(":MemNo", $MemNo);
@@ -17,13 +17,12 @@ try {
 } catch (PDOException $error) {
     echo $sql . "<br/>" . $error->getMessage();
 }
-
 ?>
 
-<?php require "../templates/header.php"; ?>
+<?php require "../templates/header.php";?>
 
 <body>
-	<h1>Membership Details</h1>
+	<h1>My Membership Details</h1>
 
 	<table>
   		<thead>

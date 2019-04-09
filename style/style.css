@@ -101,7 +101,7 @@ ul{
 
 /*TABLE SETTINGS*/
 table{
-    width: auto;
+  width: auto;
   overflow-x: auto;
   border-collapse: collapse;
 }

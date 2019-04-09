@@ -630,7 +630,74 @@ INSERT INTO `afga`.`login`
 `password`,
 `role`)
 VALUES
-('4',
-'user1',
+('1',
+'adminTest',
 'pw',
-'Admin');
+'admin');
+
+INSERT INTO `afga`.`login`
+(`MemberID`,
+`username`,
+`password`,
+`role`)
+VALUES
+('2',
+'memberTest',
+'pw',
+'member');
+
+INSERT INTO `afga`.`login`
+(`MemberID`,
+`username`,
+`password`,
+`role`)
+VALUES
+('7',
+'member2',
+'pw',
+'member');
+
+INSERT INTO `afga`.`newsletter`
+(`IssueNo`,
+`NumOfSubs`)
+VALUES
+('1',
+'45');
+
+INSERT INTO `afga`.`newsletter`
+(`IssueNo`,
+`NumOfSubs`)
+VALUES
+('2',
+'1000');
+
+INSERT INTO `afga`.`newsletter`
+(`IssueNo`,
+`NumOfSubs`)
+VALUES
+('20',
+'40');
+
+INSERT INTO `afga`.`SubscribesTo`
+(`MemNo`,
+`IssueNo`)
+VALUES
+('7',
+'20');
+
+INSERT INTO `afga`.`SubscribesTo`
+(`MemNo`,
+`IssueNo`)
+VALUES
+('7',
+'1');
+
+INSERT INTO `afga`.`SubscribesTo`
+(`MemNo`,
+`IssueNo`)
+VALUES
+('2',
+'20');
+
+
+
