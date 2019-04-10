@@ -7,19 +7,19 @@
 require "../../config.php";
 require "../../common.php";
 
-if (isset($_GET["Name"])) {
+if (isset($_GET["IncidentNum"])) {
     try {
         $connection = new PDO($dsn, $username, $password, $options);
         
-        $IncNo = $_GET["IncNo"];
+        $Number = $_GET["IncidentNum"];
         
-        $sql = "DELETE FROM Incident WHERE IncNo = :IncNo";
+        $sql = "DELETE FROM Incident WHERE IncidentNum = :IncidentNum";
         
         $statement = $connection->prepare($sql);
-        $statement->bindValue(":IncNo", $Name);
+        $statement->bindValue(":IncidentNum", $Number);
         $statement->execute();
         
-        $success = "Incident successfully deleted.";
+        $success = "Report successfully deleted.";
     } catch (PDOException $error) {
         echo $sql . "<br/>" . $error->getMessage();
     }
@@ -28,7 +28,9 @@ if (isset($_GET["Name"])) {
 try {
     $connection = new PDO($dsn, $username, $password, $options);
     
-    $sql = "SELECT * FROM Incident";
+    $sql = "SELECT * 
+            FROM Incident, Cause
+            WHERE Incident.IncidentNum = Cause.IncidentNum";
     
     $statement = $connection->prepare($sql);
     $statement->execute();
@@ -43,38 +45,42 @@ try {
 <?php require "../../templates/header.php"; ?>
 
 <body>
-	<h1>Edit Report</h1>
+	<h1>Delete Report</h1>
+	
+	<?php if ($success) echo $success; ?>
 	
 	<table>
   		<thead>
     		<tr>
       			<th>Incident Number</th>
+      			<th>Member #</th>
       			<th>Date</th>
       			<th>Reporter Name</th>
-      			<th>Club</th>
 				<th>Emergency Flag</th>
 				<th>Violation Flag</th>
 				<th>Other Flag</th>
+				<th>Club</th>
     		</tr>
   		</thead>
   		<tbody>
   			<?php foreach ($result as $row) : ?>
   				<tr>
-  					<td><?php echo escape($row["IncNo"]); ?></td>
+  					<td><?php echo escape($row["IncidentNum"]); ?></td>
+  					<td><?php echo escape($row["MemNo"]); ?>
         			<td><?php echo escape($row["Date"]); ?></td>
-        			<td><?php echo escape($row["RName"]); ?></td>
-        			<td><?php echo escape($row["EFlag"]); ?></td>
-					<td><?php echo escape($row["VFlag"]); ?></td>
-					<td><?php echo escape($row["OFlag"]); ?></td>
+        			<td><?php echo escape($row["ReporterName"]); ?></td>
+        			<td><?php echo escape($row["EmergencyFlag"]); ?></td>
+					<td><?php echo escape($row["ViolationFlag"]); ?></td>
+					<td><?php echo escape($row["OtherFlag"]); ?></td>
         			<td><?php echo escape($row["Club"]); ?></td>
-        			<td><a href="update-single.php?Name=<?php echo escape($row["IncNo"]); ?>
-        							&Date=<?php echo escape($row["Date"]); ?>">Edit</a></td>
+        			<td><a href="delete-report.php?IncidentNum=<?php echo escape($row["IncidentNum"]); ?>">Delete</a></td>
         		</tr>
         	<?php endforeach; ?>
   		</tbody>
   	</table>
+	
 </body>
 
-<a href="reports.php">Back to Events</a>
+<a href="reports.php">Back to Reports</a>
 
 <?php require '../../templates/footer.php'; ?>

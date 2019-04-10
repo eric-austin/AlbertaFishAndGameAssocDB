@@ -68,15 +68,25 @@ if (isset($_GET['PrizeName'])) {
 	
 	<form method="post">
 		<label for="PrizeName">Prize Name</label>
+		<br/>
 		<input type="text" name="PrizeName" id="PrizeName" value="<?php echo escape($Prize["PrizeName"])?>" readonly>
+		<br/>
 		<label for="Member">Member #</label>
+		<br/>
 		<input type="number" name="Member" id="Member" value="<?php echo escape($Prize["Member"])?>">
+		<br/>
 		<label for="EventName">Event Name</label>
+		<br/>
 		<input type="text" name="EventName" id="EventName" value="<?php echo escape($Prize["EventName"])?>" readonly>
+		<br/>
 		<label for="EventDate">Event Date</label>
+		<br/>
 		<input type="date" name="EventDate" id="EventDate" value="<?php echo escape($Prize["EventDate"])?>" readonly>
+		<br/>
 		<label for="Animal">Animal #</label>
+		<br/>
 		<input type="number" name="Animal" id="Animal" value="<?php echo escape($Prize["Animal"])?>">
+		<br/>
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>

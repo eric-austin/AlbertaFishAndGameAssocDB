@@ -1,7 +1,7 @@
 <?php
 
 /**
-  * HTML form to search for members based
+  * HTML form to search for prizess based
   * on given criteria
   */
 

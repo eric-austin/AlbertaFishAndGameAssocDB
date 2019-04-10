@@ -1,28 +1,26 @@
 <?php
 
 /**
-  * HTML form to search for eventss based
+  * HTML form to search for reports based
   * on given criteria
   */
 
 require "../../config.php";
 require "../../common.php";
 
-if (isset($_GET["IncNo"])) {
+if (isset($_GET["IncidentNum"])) {
     try {
         $connection = new PDO($dsn, $username, $password, $options);
         
-        $Number = $_GET["IncNo"];
-        $Date = $_GET["Date"];
+        $Number = $_GET["IncidentNum"];
         
-        $sql = "SELECT * FROM Incidents WHERE IncNo = :IncNo AND Date = :Date";
+        $sql = "DELETE FROM Incident WHERE IncidentNum = :IncidentNum";
         
         $statement = $connection->prepare($sql);
-        $statement->bindValue(":IncNo", $Name);
-        $statement->bindValue(":Date", $Date);
+        $statement->bindValue(":IncidentNum", $Number);
         $statement->execute();
         
-        $success = "Event successfully deleted.";
+        $success = "Report successfully deleted.";
     } catch (PDOException $error) {
         echo $sql . "<br/>" . $error->getMessage();
     }
@@ -33,8 +31,9 @@ if (isset($_POST["submit"])) {
         $connection = new PDO($dsn, $username, $password, $options);
         
         $sql = "SELECT *
-                FROM Incidents
-                WHERE Club = :Club";
+                FROM Incident, Cause
+                WHERE Incident.Club = :Club
+                AND Incident.IncidentNum = Cause.IncidentNum";
         
         $Club = $_POST["Club"];
         
@@ -63,28 +62,28 @@ if (isset($_POST['submit'])) {
   		<thead>
     		<tr>
       			<th>Incident Number</th>
+      			<th>Member #</th>
       			<th>Date</th>
       			<th>Reporter Name</th>
-      			<th>Club</th>
 				<th>Emergency Flag</th>
 				<th>Violation Flag</th>
 				<th>Other Flag</th>
+				<th>Club</th>
     		</tr>
   		</thead>
   		<tbody>
   			<?php foreach ($result as $row) : ?>
   				<tr>
-  					<td><?php echo escape($row["IncNo"]); ?></td>
+  					<td><?php echo escape($row["IncidentNum"]); ?></td>
+  					<td><?php echo escape($row["MemNo"]); ?>
         			<td><?php echo escape($row["Date"]); ?></td>
-        			<td><?php echo escape($row["RName"]); ?></td>
-        			<td><?php echo escape($row["EFlag"]); ?></td>
-					<td><?php echo escape($row["VFlag"]); ?></td>
-					<td><?php echo escape($row["OFlag"]); ?></td>
+        			<td><?php echo escape($row["ReporterName"]); ?></td>
+        			<td><?php echo escape($row["EmergencyFlag"]); ?></td>
+					<td><?php echo escape($row["ViolationFlag"]); ?></td>
+					<td><?php echo escape($row["OtherFlag"]); ?></td>
         			<td><?php echo escape($row["Club"]); ?></td>
-        			<td><a href="update-single.php?Name=<?php echo escape($row["IncNo"]); ?>
-        							&Date=<?php echo escape($row["Date"]); ?>">Edit</a></td>
-        			<td><a href="search-report.php?Name=<?php echo escape($row["IncNo"]); ?>
-        							&Date=<?php echo escape($row["Date"]); ?>">Delete</a></td>
+        			<td><a href="update-single.php?IncidentNum=<?php echo escape($row["IncidentNum"]); ?>">Edit</a></td>
+        			<td><a href="search-report.php?IncidentNum=<?php echo escape($row["IncidentNum"]); ?>">Delete</a></td>
         		</tr>
         	<?php endforeach; ?>
   		</tbody>

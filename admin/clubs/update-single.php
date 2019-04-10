@@ -57,11 +57,17 @@ if (isset($_GET['City'])) {
 	
 	<form method="post">
 		<label for="City">City</label>
+		<br/>
 		<input type="text" name="City" id="City" value="<?php echo escape($Club["City"])?>" readonly>
+		<br/>
 		<label for="Address">Address</label>
+		<br/>
 		<input type="text" name="Address" id="Address" value="<?php echo escape($Club["Address"])?>">
+		<br/>
 		<label for="NumMemb"># of Members</label>
+		<br/>
 		<input type="number" name="NumMemb" id="NumMemb" value="<?php echo escape($Club["NumMemb"])?>" readonly>
+		<br/>
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>

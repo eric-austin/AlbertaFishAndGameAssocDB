@@ -64,19 +64,33 @@ if (isset($_GET['MemNo'])) {
 	
 	<form method="post">
 		<label for="MemNo">Member #</label>
+		<br/>
 		<input type="number" name="MemNo" id="MemNo" value="<?php echo escape($Member["MemNo"])?>" readonly>
+		<br/>
 		<label for="FName">First Name</label>
+		<br/>
 		<input type="text" name="FName" id="FName" value="<?php echo escape($Member["FName"])?>">
+		<br/>
 		<label for="LName">Last Name</label>
+		<br/>
 		<input type="text" name="LName" id="LName" value="<?php echo escape($Member["LName"])?>">
+		<br/>
 		<label for="Gender">Gender</label>
+		<br/>
 		<input type="text" name="Gender" id="Gender" value="<?php echo escape($Member["Gender"])?>">
+		<br/>
 		<label for="Phone">Phone #</label>
+		<br/>
 		<input type="text" name="Phone" id="Phone" value="<?php echo escape($Member["Phone"])?>">
+		<br/>
 		<label for="Email">Email</label>
+		<br/>
 		<input type="text" name="Email" id="Email" value="<?php echo escape($Member["Email"])?>">
+		<br/>
 		<label for="Type">Member Type</label>
+		<br/>
 		<input type="text" name="Type" id="Type" value="<?php echo escape($Member["Type"])?>">
+		<br/>
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>

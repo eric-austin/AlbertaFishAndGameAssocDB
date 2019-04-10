@@ -29,7 +29,7 @@ CREATE TABLE MemberCard (
 );
 
 CREATE TABLE Incident (
-	IncidentNum		INT(8) AUTO_INCREMENT PRIMARY KEY,
+	IncidentNum		INT(8) PRIMARY KEY,
 	Date			DATE NOT NULL,
 	ReporterName	VARCHAR(60) NOT NULL,
 	EmergencyFlag	BOOLEAN NOT NULL DEFAULT FALSE,

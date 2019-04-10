@@ -13,22 +13,40 @@ if (isset($_POST['submit'])) {
         $connection = new PDO($dsn, $username, $password, $options);
         
         $new_report = array(
-            "IncNo" => $_POST['IncNo'],
+            "IncidentNum" => $_POST["IncidentNum"],
             "Date" => $_POST['Date'],
-            "RName" => $_POST["RName"],
-            "Club" => $_POST["Club"],
-            "EFlag" => $_POST["EFlag"],
-			"VFlag" => $_POST["VFlag"],
-			"OFlag" => $_POST["OFlag"],
-            "MemNo" => $_POST["MemNo"]
+            "ReporterName" => $_POST["RName"],
+            "EmergencyFlag" => $_POST["EFlag"],
+			"ViolationFlag" => $_POST["VFlag"],
+			"OtherFlag" => $_POST["OFlag"],
+            "Club" => $_POST["Club"]
         );
         
-        $sql = "INSERT INTO Incident (IncNo, Date, RName, Club, EFlag, VFlag, OFlag) 
-                VALUES (:IncNo, :Date, :RName, :EFlag, :VFlag, :OFlag, :Club)";
+        $sql = "INSERT INTO Incident (IncidentNum, Date, ReporterName, EmergencyFlag, ViolationFlag, OtherFlag, Club) 
+                VALUES (:IncidentNum, :Date, :ReporterName, :EmergencyFlag, :ViolationFlag, :OtherFlag, :Club)";
         
         $statement = $connection->prepare($sql);
-        $statement->execute($new_member);
+        $statement->execute($new_report);
     } catch(PDOException $error) {
+        echo $sql . "<br/>" . $error->getMessage();
+    }
+    
+    try {
+        $connection = new PDO($dsn, $username, $password, $options);
+        
+        $new_cause = array(
+            "MemNo" => $_POST["MemNo"],
+            "Club" => $_POST["Club"],
+            "IncidentNum" => $_POST["IncidentNum"]
+        );
+        
+        $sql = "INSERT INTO Cause (MemNo, Club, IncidentNum)
+                VALUES (:MemNo, :Club, :IncidentNum)";
+        
+        $statement = $connection->prepare($sql);
+        $statement->execute($new_cause);
+       
+    } catch (PDOException $e) {
         echo $sql . "<br/>" . $error->getMessage();
     }
 }
@@ -38,17 +56,21 @@ if (isset($_POST['submit'])) {
 <?php include "../../templates/header.php"; ?>
 
 <?php if (isset($_POST['submit']) && $statement) { ?>
-  <?php echo escape($_POST['IncNo']); ?> successfully added.
+  <?php echo escape($_POST['IncidentNum']); ?> successfully added.
 <?php } ?>
 
 <body>
 	<h1>Create Report</h1>
 
 	<form method="post">
-		<label for="IncNo">Incident Number</label>
-		<br />		
-		<input type="text" name="IncNo" id="IncNo">
-		<br />
+		<label for="IncidentNum">Incident #</label>
+		<br/>
+		<input type="number" name="IncidentNum" id="IncidentNum">
+		<br/>
+		<label for="MemNo">Offending Member #</label>
+		<br/>
+		<input type="number" name="MemNo" id="MemNo">
+		<br/>
 		<label for="Date">Date</label>
 		<br />
 		<input type="date" name="Date" id="Date">
@@ -61,17 +83,17 @@ if (isset($_POST['submit'])) {
 		<br />
 		<input type="text" name="Club" id="Club">
 		<br />
-		<label for="EFlag">Emergency Flag</label>
+		<label for="EFlag">Emergency (1=Yes, 0=No)</label>
 		<br />
-		<input type="checkbox" name="EFlag" id="EFlag">
+		<input type="number" name="EFlag" id="EFlag">
 		<br />
-		<label for="VFlag">Violation Flag</label>
+		<label for="VFlag">Violation Flag (1=Yes, 0=No)</label>
 		<br />
-		<input type="checkbox" name="VFlag" id="VFlag">
+		<input type="number" name="VFlag" id="VFlag">
 		<br />
-		<label for="OFlag">Other Flag</label>
+		<label for="OFlag">Other Flag (1=Yes, 0=No)</label>
 		<br />
-		<input type="checkbox" name="OFlag" id="OFlag">
+		<input type="number" name="OFlag" id="OFlag">
 		<br />
 		<input type="submit" name="submit" value="Submit">
 		<br />

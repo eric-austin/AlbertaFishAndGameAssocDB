@@ -64,19 +64,33 @@ if (isset($_GET['TagNo'])) {
 	
 	<form method="post">
 		<label for="TagNo">Tag #</label>
+		<br/>
 		<input type="number" name="TagNo" id="TagNo" value="<?php echo escape($Animal["TagNo"])?>" readonly>
+		<br/>
 		<label for="Weight">Weight</label>
+		<br/>
 		<input type="number" name="Weight" id="Weight" value="<?php echo escape($Animal["Weight"])?>">
+		<br/>
 		<label for="Species">Species</label>
+		<br/>
 		<input type="text" name="Species" id="Species" value="<?php echo escape($Animal["Species"])?>">
+		<br/>
 		<label for="Gender">Gender</label>
+		<br/>
 		<input type="text" name="Gender" id="Gender" value="<?php echo escape($Animal["Gender"])?>">
+		<br/>
 		<label for="Type">Type</label>
+		<br/>
 		<input type="text" name="Type" id="Type" value="<?php echo escape($Animal["Type"])?>">
+		<br/>
 		<label for="Hunter">Hunter #</label>
+		<br/>
 		<input type="number" name="Hunter" id="Hunter" value="<?php echo escape($Animal["Hunter"])?>">
+		<br/>
 		<label for="WeaponUsed">Weapon Used</label>
+		<br/>
 		<input type="text" name="WeaponUsed" id="WeaponUsed" value="<?php echo escape($Animal["WeaponUsed"])?>">
+		<br/>
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>

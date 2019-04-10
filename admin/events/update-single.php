@@ -63,15 +63,25 @@ if (isset($_GET['Name'])) {
 	
 	<form method="post">
 		<label for="Name">Name</label>
+		<br/>
 		<input type="text" name="Name" id="Name" value="<?php echo escape($Event["Name"])?>" readonly>
+		<br/>
 		<label for="Date">Date</label>
+		<br/>
 		<input type="date" name="Date" id="Date" value="<?php echo escape($Event["Date"])?>" readonly>
+		<br/>
 		<label for="City">City</label>
+		<br/>
 		<input type="text" name="City" id="City" value="<?php echo escape($Event["City"])?>">
+		<br/>
 		<label for="Street">Street Address</label>
+		<br/>
 		<input type="text" name="Street" id="Street" value="<?php echo escape($Event["Street"])?>">
+		<br/>
 		<label for="Club">Club</label>
+		<br/>
 		<input type="text" name="Club" id="Street" value="<?php echo escape($Event["Club"])?>">
+		<br/>
 		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>
